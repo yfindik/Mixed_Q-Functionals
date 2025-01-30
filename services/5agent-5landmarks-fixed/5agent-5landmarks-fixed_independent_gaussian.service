@@ -1,0 +1,15 @@
+[Unit]
+Description= 5Agent-5Landmarks Independent Guassian
+ 
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=[full_directory_path]/venv/bin/python [full_directory_path]/experiments/mpe/training_mqf.py --experiment_name results/final/5agent_5landmarks_fixed --env_name 5agent_5landmarks_fixed --is_not_gym_env --max_episode_len 50 --daemon --nb_runs 5 --update_step 1 --max_episode 10000 --max_step 500000 --policy_type e_greedy --ma_type ind
+Restart=on-failure
+WorkingDirectory=[full_directory_path]
+Nice=19
+LimitNOFILE=16384
+ 
+[Install]
+WantedBy=multi-user.target

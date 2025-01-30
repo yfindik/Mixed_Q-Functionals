@@ -1,0 +1,15 @@
+[Unit]
+Description=Demo Service
+ 
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=[full_directory_path]/venv/bin/python [full_directory_path]/experiments/walker/training_ddpg.py --experiment_name results/final/2-walker-sample10k --env_name walker --is_sisl_env --n_walkers 2 --max_episode_len 500 --daemon --nb_runs 5 --max_episode 30000 --max_step 1500000 --update_step 10 --saving_frequency 10000 --policy_type gaussian --ma_type iddpg --num_layers 2 --gamma 0.99 --target_network_learning_rate 0.005 --learning_rate 0.000025
+Restart=on-failure
+WorkingDirectory=[full_directory_path]
+Nice=19
+LimitNOFILE=16384
+ 
+[Install]
+WantedBy=multi-user.target

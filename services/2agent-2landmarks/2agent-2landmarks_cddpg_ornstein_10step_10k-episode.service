@@ -1,0 +1,15 @@
+[Unit]
+Description= 2Agent-2Landmarks Centralized Guassian
+ 
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=[full_directory_path]/venv/bin/python [full_directory_path]/experiments/mpe/training_ddpg.py --experiment_name results/final/2agent_2landmarks --env_name 2agent_2landmarks --is_not_gym_env --max_episode_len 50 --daemon --nb_runs 5 --update_step 10 --max_episode 10000 --max_step 500000 --ma_type cddpg
+Restart=on-failure
+WorkingDirectory=[full_directory_path]
+Nice=19
+LimitNOFILE=16384
+ 
+[Install]
+WantedBy=multi-user.target

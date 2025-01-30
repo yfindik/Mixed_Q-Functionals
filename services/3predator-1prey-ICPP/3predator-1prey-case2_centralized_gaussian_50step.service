@@ -1,0 +1,15 @@
+[Unit]
+Description= 3predator-1prey-case2 Centralized Guassian
+ 
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=[full_directory_path]/venv/bin/python [full_directory_path]/experiments/mpe/training_mqf.py --experiment_name results/final/3predator_1prey_case2_gaussian --env_name 3pred_1prey_ICPP --is_not_gym_env --max_episode_len 50 --saving_frequency 100000 --daemon --nb_runs 3 --update_step 50 --max_episode 40000 --max_step 2000000 --policy_type gaussian --ma_type centralized
+Restart=on-failure
+WorkingDirectory=[full_directory_path]
+Nice=19
+LimitNOFILE=16384
+ 
+[Install]
+WantedBy=multi-user.target

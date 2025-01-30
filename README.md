@@ -73,14 +73,14 @@ Here, **environment_name** can be, again, either 'mpe' or 'walker', and **algo_c
 ## Analysis
 
 For the analysis of the models in terms of rewards, success rate, and other metrics, 
-please refer to the other [repository](https://drive.google.com/drive/folders/1c3f0vD0tV7AGRSN56kS6iSxGk9t98NSl). 
+please refer to the other [repository](https://github.com/yfindik/Mixed_Q-Functionals_Analysis). 
 You will find the scripts for the figures in the main paper and appendix, 
 as well as the logs in each experiment's folder.
 
 
 ## ToDos
 
-- Share the latest trained models for the algorithms.
+- Share the latest trained models of the algorithms.
 
 
 
